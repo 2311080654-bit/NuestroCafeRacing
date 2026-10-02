@@ -1,0 +1,49 @@
+{
+    "name": "Nuestro Café Racing ❤️",
+    "short_name": "Café Racing",
+    "description": "Un pequeño universo creado para Ángel Gabriel, entre café, motos, música y mucho amor.",
+    "lang": "es-MX",
+    "dir": "ltr",
+
+    "start_url": "./index.html",
+    "scope": "./",
+
+    "display": "standalone",
+    "display_override": [
+        "window-controls-overlay",
+        "standalone"
+    ],
+
+    "orientation": "portrait-primary",
+
+    "theme_color": "#17110f",
+    "background_color": "#0d0908",
+
+    "icons": [
+        {
+            "src": "img/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "img/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "img/icon-512-maskable.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ],
+
+    "categories": [
+        "lifestyle",
+        "entertainment"
+    ],
+
+    "prefer_related_applications": false
+}

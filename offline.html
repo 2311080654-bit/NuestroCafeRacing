@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#17110f"
+    >
+
+    <meta
+        name="description"
+        content="Nuestro Café Racing - Una historia de amor para Ángel"
+    >
+
+    <title>
+        Sin conexión | Nuestro Café Racing ❤️
+    </title>
+
+    <!-- Fuente principal -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <style>
+
+        /* =================================================
+           RESET
+           ================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            min-height: 100%;
+        }
+
+
+        body {
+
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 30px;
+
+            background:
+                radial-gradient(
+                    circle at 50% 20%,
+                    rgba(126, 78, 52, 0.20),
+                    transparent 35%
+                ),
+
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(92, 31, 41, 0.18),
+                    transparent 35%
+                ),
+
+                #0d0908;
+
+            color: #eee5d8;
+
+            font-family:
+                "Montserrat",
+                sans-serif;
+
+            overflow-x: hidden;
+
+        }
+
+
+        /* =================================================
+           CONTENEDOR
+           ================================================= */
+
+        .offline-container {
+
+            width: 100%;
+            max-width: 650px;
+
+            text-align: center;
+
+            padding: 55px 35px;
+
+            border: 1px solid
+                rgba(185, 154, 104, 0.22);
+
+            border-radius: 28px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(38, 25, 20, 0.96),
+                    rgba(18, 12, 10, 0.96)
+                );
+
+            box-shadow:
+                0 30px 80px
+                rgba(0, 0, 0, 0.55),
+
+                inset 0 1px 0
+                rgba(255, 255, 255, 0.04);
+
+            animation:
+                appear 0.8s ease both;
+
+        }
+
+
+        /* =================================================
+           ICONO
+           ================================================= */
+
+        .offline-icon {
+
+            width: 110px;
+            height: 110px;
+
+            margin: 0 auto 30px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #7a4431,
+                    #3b1118
+                );
+
+            border: 1px solid
+                rgba(185, 154, 104, 0.35);
+
+            box-shadow:
+                0 15px 40px
+                rgba(0, 0, 0, 0.4);
+
+            animation:
+                floatIcon 4s ease-in-out infinite;
+
+        }
+
+
+        .offline-icon i {
+
+            font-size: 42px;
+
+            color: #eee5d8;
+
+        }
+
+
+        /* =================================================
+           TÍTULOS
+           ================================================= */
+
+        .brand {
+
+            margin-bottom: 8px;
+
+            color: #b99a68;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            letter-spacing: 0.22em;
+
+            text-transform: uppercase;
+
+        }
+
+
+        h1 {
+
+            margin-bottom: 20px;
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size: clamp(
+                44px,
+                8vw,
+                70px
+            );
+
+            font-weight: 600;
+
+            line-height: 0.95;
+
+            color: #eee5d8;
+
+        }
+
+
+        h1 span {
+
+            color: #b99a68;
+
+        }
+
+
+        .message {
+
+            max-width: 500px;
+
+            margin: 0 auto 25px;
+
+            color: #cfc2b2;
+
+            font-size: 15px;
+
+            line-height: 1.9;
+
+            font-weight: 300;
+
+        }
+
+
+        /* =================================================
+           MENSAJE PARA ÁNGEL
+           ================================================= */
+
+        .love-message {
+
+            margin: 28px auto;
+
+            padding: 22px 24px;
+
+            border-left: 2px solid #b99a68;
+
+            border-right: 2px solid #b99a68;
+
+            color: #eee5d8;
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size: 22px;
+
+            font-style: italic;
+
+            line-height: 1.5;
+
+        }
+
+
+        /* =================================================
+           BOTÓN
+           ================================================= */
+
+        .retry-button {
+
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 10px;
+
+            min-height: 52px;
+
+            padding: 14px 28px;
+
+            border: 1px solid
+                rgba(185, 154, 104, 0.45);
+
+            border-radius: 999px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #7a4431,
+                    #5c1f29
+                );
+
+            color: #fff;
+
+            font-family:
+                "Montserrat",
+                sans-serif;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            letter-spacing: 0.04em;
+
+            cursor: pointer;
+
+            text-decoration: none;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+
+        }
+
+
+        .retry-button:hover {
+
+            transform: translateY(-3px);
+
+            border-color:
+                rgba(185, 154, 104, 0.8);
+
+            box-shadow:
+                0 12px 30px
+                rgba(92, 31, 41, 0.35);
+
+        }
+
+
+        .retry-button:active {
+
+            transform: translateY(-1px);
+
+        }
+
+
+        /* =================================================
+           ESTADO DE CONEXIÓN
+           ================================================= */
+
+        .status {
+
+            margin-top: 25px;
+
+            color: #928a82;
+
+            font-size: 11px;
+
+            letter-spacing: 0.08em;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .status-dot {
+
+            display: inline-block;
+
+            width: 7px;
+            height: 7px;
+
+            margin-right: 7px;
+
+            border-radius: 50%;
+
+            background: #b99a68;
+
+            box-shadow:
+                0 0 10px
+                rgba(185, 154, 104, 0.7);
+
+            animation:
+                pulse 1.8s ease-in-out infinite;
+
+        }
+
+
+        /* =================================================
+           DECORACIÓN
+           ================================================= */
+
+        .heart {
+
+            position: fixed;
+
+            color: rgba(
+                185,
+                154,
+                104,
+                0.12
+            );
+
+            pointer-events: none;
+
+            animation:
+                heartFloat
+                linear infinite;
+
+        }
+
+
+        .heart-1 {
+
+            left: 8%;
+            bottom: -30px;
+
+            font-size: 28px;
+
+            animation-duration: 9s;
+
+        }
+
+
+        .heart-2 {
+
+            left: 78%;
+            bottom: -40px;
+
+            font-size: 20px;
+
+            animation-duration: 12s;
+
+            animation-delay: 2s;
+
+        }
+
+
+        .heart-3 {
+
+            left: 45%;
+            bottom: -30px;
+
+            font-size: 16px;
+
+            animation-duration: 10s;
+
+            animation-delay: 4s;
+
+        }
+
+
+        /* =================================================
+           ANIMACIONES
+           ================================================= */
+
+        @keyframes appear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(25px)
+                    scale(0.98);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0)
+                    scale(1);
+
+            }
+
+        }
+
+
+        @keyframes floatIcon {
+
+            0%,
+            100% {
+
+                transform:
+                    translateY(0);
+
+            }
+
+            50% {
+
+                transform:
+                    translateY(-8px);
+
+            }
+
+        }
+
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+
+                opacity: 0.45;
+
+                transform: scale(0.85);
+
+            }
+
+            50% {
+
+                opacity: 1;
+
+                transform: scale(1.1);
+
+            }
+
+        }
+
+
+        @keyframes heartFloat {
+
+            0% {
+
+                opacity: 0;
+
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
+            }
+
+            15% {
+
+                opacity: 1;
+
+            }
+
+            100% {
+
+                opacity: 0;
+
+                transform:
+                    translateY(-110vh)
+                    rotate(25deg);
+
+            }
+
+        }
+
+
+        /* =================================================
+           RESPONSIVE
+           ================================================= */
+
+        @media (max-width: 600px) {
+
+            body {
+
+                padding: 18px;
+
+            }
+
+
+            .offline-container {
+
+                padding: 45px 22px;
+
+                border-radius: 22px;
+
+            }
+
+
+            .offline-icon {
+
+                width: 90px;
+                height: 90px;
+
+            }
+
+
+            .offline-icon i {
+
+                font-size: 34px;
+
+            }
+
+
+            h1 {
+
+                font-size: 48px;
+
+            }
+
+
+            .message {
+
+                font-size: 14px;
+
+                line-height: 1.8;
+
+            }
+
+
+            .love-message {
+
+                font-size: 20px;
+
+            }
+
+
+            .retry-button {
+
+                width: 100%;
+
+            }
+
+        }
+
+
+        @media (max-width: 380px) {
+
+            .offline-container {
+
+                padding:
+                    38px
+                    18px;
+
+            }
+
+
+            h1 {
+
+                font-size: 42px;
+
+            }
+
+
+            .love-message {
+
+                font-size: 18px;
+
+            }
+
+        }
+
+
+        /* =================================================
+           REDUCIR ANIMACIONES
+           ================================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+
+                animation-duration:
+                    0.01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                transition-duration:
+                    0.01ms !important;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================================================
+         DECORACIÓN
+         ================================================ -->
+
+    <span
+        class="heart heart-1"
+        aria-hidden="true"
+    >
+        ♥
+    </span>
+
+    <span
+        class="heart heart-2"
+        aria-hidden="true"
+    >
+        ♥
+    </span>
+
+    <span
+        class="heart heart-3"
+        aria-hidden="true"
+    >
+        ♥
+    </span>
+
+
+    <!-- ================================================
+         CONTENIDO
+         ================================================ -->
+
+    <main
+        class="offline-container"
+        aria-labelledby="offlineTitle"
+    >
+
+        <div
+            class="offline-icon"
+            aria-hidden="true"
+        >
+
+            <i class="fa-solid fa-mug-hot"></i>
+
+        </div>
+
+
+        <p class="brand">
+            Nuestro Café Racing
+        </p>
+
+
+        <h1 id="offlineTitle">
+
+            Un pequeño
+            <span>alto.</span>
+
+        </h1>
+
+
+        <p class="message">
+
+            Parece que en este momento no tenemos
+            conexión a Internet.
+
+            <br><br>
+
+            Pero tranquilo, nuestra historia
+            sigue aquí. ❤️
+
+        </p>
+
+
+        <div class="love-message">
+
+            “En la distancia, encuentro la fuerza
+            para amarte con más intensidad”
+
+        </div>
+
+
+        <a
+            href="./index.html"
+            class="retry-button"
+            id="retryButton"
+        >
+
+            <i class="fa-solid fa-rotate-right"></i>
+
+            Intentar nuevamente
+
+        </a>
+
+
+        <p class="status">
+
+            <span
+                class="status-dot"
+                aria-hidden="true"
+            ></span>
+
+            Esperando conexión...
+
+        </p>
+
+    </main>
+
+
+    <script>
+
+        /* =================================================
+           BOTÓN DE REINTENTO
+           ================================================= */
+
+        const retryButton =
+            document.getElementById(
+                "retryButton"
+            );
+
+
+        if (retryButton) {
+
+            retryButton.addEventListener(
+                "click",
+                event => {
+
+                    /*
+                     * Si vuelve la conexión,
+                     * intenta cargar la aplicación.
+                     */
+
+                    if (navigator.onLine) {
+
+                        return;
+
+                    }
+
+                    event.preventDefault();
+
+                    window.location.reload();
+
+                }
+            );
+
+        }
+
+
+        /* =================================================
+           DETECTAR CONEXIÓN
+           ================================================= */
+
+        window.addEventListener(
+            "online",
+            () => {
+
+                window.location.href =
+                    "./index.html";
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,1565 @@
+/* =========================================================
+   NUESTRO CAFÉ RACING
+   RESPONSIVE.CSS
+   Celulares · Tablets · Pantallas pequeñas
+========================================================= */
+
+
+/* =========================================================
+   TABLETS
+   761px - 1050px
+========================================================= */
+
+@media (width >= 761px) and (width <= 1050px) {
+
+    /* HEADER */
+
+    .header-container {
+        width: 90%;
+    }
+
+    .nav {
+        gap: 18px;
+    }
+
+    .nav a {
+        font-size: 0.56rem;
+        letter-spacing: 1.5px;
+    }
+
+
+    /* HERO */
+
+    .hero-content {
+        width: 90%;
+    }
+
+    .hero h1 {
+        font-size: clamp(5rem, 12vw, 8rem);
+    }
+
+    .hero-car {
+        right: -10%;
+        width: 55vw;
+        opacity: 0.45;
+    }
+
+    .hero-car-number {
+        font-size: 24rem;
+    }
+
+
+    /* HISTORIA */
+
+    .section {
+        width: 90%;
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+
+    .story-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .story-card:last-child {
+        grid-column: 1 / -1;
+    }
+
+
+    /* CAFÉ */
+
+    .coffee-section {
+        grid-template-columns: 1fr 1fr;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .coffee-left h2 {
+        font-size: 5rem;
+    }
+
+    .coffee-right {
+        transform: scale(0.85);
+    }
+
+
+    /* RACING */
+
+    .racing-content {
+        width: 90%;
+    }
+
+    .motorcycle i {
+        font-size: 12rem;
+    }
+
+
+    /* MÚSICA */
+
+    .music-section {
+        width: 90%;
+    }
+
+    .music-info {
+        padding: 45px;
+    }
+
+    .vinyl {
+        width: 230px;
+        height: 230px;
+    }
+
+
+    /* INSTALAR */
+
+    .install-section {
+        width: 90%;
+    }
+
+}
+
+
+/* =========================================================
+   CELULARES
+   Hasta 760px
+========================================================= */
+
+@media (width <= 760px) {
+
+    /* =====================================================
+       GENERAL
+    ====================================================== */
+
+    html {
+        scroll-padding-top: 70px;
+    }
+
+    body {
+        width: 100%;
+        min-width: 0;
+        overflow-x: hidden;
+    }
+
+    .section,
+    .music-section,
+    .install-section,
+    .racing-content {
+
+        width: calc(100% - 34px);
+
+    }
+
+
+    /* =====================================================
+       HEADER
+    ====================================================== */
+
+    .header {
+        background:
+            rgba(8, 7, 6, 0.88);
+
+        backdrop-filter: blur(15px);
+    }
+
+    .header-container {
+
+        width: calc(100% - 30px);
+
+        height: 70px;
+
+    }
+
+    .logo {
+        gap: 8px;
+    }
+
+    .logo-icon {
+
+        width: 34px;
+        height: 34px;
+
+        font-size: 0.75rem;
+
+    }
+
+    .logo-text {
+
+        font-size: 1.05rem;
+
+    }
+
+
+    /* BOTÓN HAMBURGUESA */
+
+    .menu-toggle {
+
+        position: relative;
+
+        z-index: 6000;
+
+        width: 42px;
+        height: 42px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        cursor: pointer;
+
+        border: 1px solid rgba(201,166,107,0.25);
+
+        border-radius: 50%;
+
+    }
+
+    .menu-toggle span {
+
+        width: 19px;
+        height: 1px;
+
+        margin: 3px 0;
+
+        background: var(--cream);
+
+        transition:
+            transform 0.3s ease,
+            opacity 0.3s ease;
+
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+
+        transform:
+            translateY(7px)
+            rotate(45deg);
+
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+
+        opacity: 0;
+
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+
+        transform:
+            translateY(-7px)
+            rotate(-45deg);
+
+    }
+
+
+    /* MENÚ */
+
+    .nav {
+
+        position: fixed;
+
+        z-index: 5500;
+
+        top: 70px;
+        right: 0;
+
+        width: 100%;
+
+        height: calc(100svh - 70px);
+
+        padding: 55px 30px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: flex-start;
+
+        gap: 0;
+
+        background:
+            radial-gradient(
+                circle at center top,
+                rgba(111,41,50,0.16),
+                transparent 45%
+            ),
+            rgba(8,7,6,0.98);
+
+        backdrop-filter: blur(20px);
+
+        border-top: 1px solid rgba(201,166,107,0.12);
+
+        transform: translateX(100%);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transition:
+            transform 0.4s ease,
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+
+        overflow-y: auto;
+
+    }
+
+    .nav.active {
+
+        transform: translateX(0);
+
+        opacity: 1;
+
+        visibility: visible;
+
+    }
+
+    .nav a {
+
+        width: min(320px, 100%);
+
+        padding: 18px 0;
+
+        text-align: center;
+
+        color: var(--cream);
+
+        font-family:
+            "Cormorant Garamond",
+            serif;
+
+        font-size: 1.6rem;
+
+        font-weight: 500;
+
+        letter-spacing: 1px;
+
+        text-transform: none;
+
+        border-bottom:
+            1px solid rgba(255,255,255,0.06);
+
+    }
+
+    .nav a::after {
+        display: none;
+    }
+
+    .nav a:hover {
+
+        color: var(--gold);
+
+    }
+
+    .nav-heart {
+
+        width: 48px !important;
+        height: 48px;
+
+        margin-top: 25px;
+
+        border:
+            1px solid rgba(201,166,107,0.35) !important;
+
+        border-radius: 50% !important;
+
+    }
+
+
+    /* =====================================================
+       HERO
+    ====================================================== */
+
+    .hero {
+
+        min-height: 100svh;
+
+        align-items: center;
+
+    }
+
+    .hero-content {
+
+        width: calc(100% - 34px);
+
+        padding-top: 65px;
+
+        text-align: left;
+
+    }
+
+    .hero-kicker {
+
+        font-size: 0.48rem;
+
+        letter-spacing: 3px;
+
+    }
+
+    .hero-date {
+
+        font-size: 0.95rem;
+
+        letter-spacing: 3px;
+
+    }
+
+    .hero-divider {
+
+        width: 110px;
+
+        margin: 25px 0;
+
+    }
+
+    .hero h1 {
+
+        max-width: 100%;
+
+        font-size:
+            clamp(
+                4.4rem,
+                20vw,
+                6.5rem
+            );
+
+        letter-spacing: -3px;
+
+        line-height: 0.73;
+
+    }
+
+    .hero h1 em {
+
+        margin-left: 35px;
+
+    }
+
+    .hero-subtitle {
+
+        margin-top: 28px;
+
+        font-size: 1.45rem;
+
+    }
+
+    .hero-description {
+
+        max-width: 290px;
+
+        font-size: 0.67rem;
+
+        line-height: 1.9;
+
+    }
+
+    .hero-button {
+
+        margin-top: 28px;
+
+        padding: 14px 17px;
+
+        font-size: 0.52rem;
+
+        gap: 12px;
+
+    }
+
+    .hero-car {
+
+        right: -35%;
+
+        top: 62%;
+
+        width: 75vw;
+
+        height: 280px;
+
+        opacity: 0.22;
+
+        transform:
+            translateY(-50%)
+            rotate(-4deg);
+
+    }
+
+    .hero-car i {
+
+        font-size:
+            clamp(
+                8rem,
+                37vw,
+                12rem
+            );
+
+    }
+
+    .hero-car-number {
+
+        right: 0;
+
+        top: -40%;
+
+        font-size: 18rem;
+
+    }
+
+    .hero-car-line {
+
+        bottom: 20%;
+
+    }
+
+    .hero-scroll {
+
+        bottom: 20px;
+
+        font-size: 0.42rem;
+
+    }
+
+
+    /* =====================================================
+       SECCIONES
+    ====================================================== */
+
+    .section {
+
+        padding-top: 95px;
+
+        padding-bottom: 95px;
+
+    }
+
+    .section-heading {
+
+        margin-bottom: 45px;
+
+    }
+
+    .section-kicker {
+
+        margin-bottom: 15px;
+
+        font-size: 0.5rem;
+
+        letter-spacing: 3px;
+
+    }
+
+    .section-heading h2,
+    .coffee-left h2,
+    .racing-text h2,
+    .install-content h2,
+    .gift-content h2 {
+
+        font-size:
+            clamp(
+                3.1rem,
+                15vw,
+                5rem
+            );
+
+        letter-spacing: -1px;
+
+    }
+
+    .section-heading p {
+
+        margin-top: 20px;
+
+        font-size: 0.7rem;
+
+        line-height: 1.9;
+
+    }
+
+
+    /* =====================================================
+       HISTORIA
+    ====================================================== */
+
+    .story-section {
+
+        min-height: auto;
+
+    }
+
+    .story-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+
+    }
+
+    .story-card,
+    .story-card:last-child {
+
+        grid-column: auto;
+
+        min-height: 300px;
+
+        padding: 30px;
+
+    }
+
+    .story-number {
+
+        top: 23px;
+        right: 23px;
+
+        font-size: 0.9rem;
+
+    }
+
+    .story-icon {
+
+        width: 46px;
+        height: 46px;
+
+    }
+
+    .story-card h3 {
+
+        margin-top: 35px;
+
+        font-size: 2rem;
+
+    }
+
+    .story-card p {
+
+        font-size: 0.67rem;
+
+        line-height: 1.8;
+
+    }
+
+
+    /* =====================================================
+       CAFÉ
+    ====================================================== */
+
+    .coffee-section {
+
+        min-height: auto;
+
+        padding:
+            100px
+            17px
+            80px;
+
+        display: flex;
+
+        flex-direction: column;
+
+    }
+
+    .coffee-left {
+
+        width: 100%;
+
+        max-width: none;
+
+    }
+
+    .coffee-left h2 {
+
+        font-size:
+            clamp(
+                4rem,
+                19vw,
+                6rem
+            );
+
+    }
+
+    .coffee-left > p {
+
+        font-size: 0.7rem;
+
+        line-height: 1.9;
+
+    }
+
+    .coffee-info {
+
+        margin-top: 28px;
+
+    }
+
+    .coffee-button {
+
+        max-width: 100%;
+
+        padding: 14px 16px;
+
+        font-size: 0.53rem;
+
+    }
+
+    .hidden-message p {
+
+        font-size: 1.1rem;
+
+    }
+
+    .coffee-right {
+
+        width: 100%;
+
+        height: 380px;
+
+        margin-top: 20px;
+
+        transform: none;
+
+    }
+
+    .coffee-aura {
+
+        width: 310px;
+        height: 310px;
+
+    }
+
+    .coffee-cup {
+
+        transform: scale(0.72);
+
+    }
+
+    .coffee-decoration-one {
+
+        width: 330px;
+        height: 330px;
+
+        right: -180px;
+
+    }
+
+    .coffee-decoration-two {
+
+        width: 230px;
+        height: 230px;
+
+        left: -170px;
+
+    }
+
+
+    /* =====================================================
+       RACING
+    ====================================================== */
+
+    .racing-section {
+
+        min-height: auto;
+
+    }
+
+    .racing-content {
+
+        width: calc(100% - 34px);
+
+        min-height: auto;
+
+        padding:
+            100px
+            0
+            90px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+    .racing-text {
+
+        order: 1;
+
+    }
+
+    .racing-text h2 {
+
+        font-size:
+            clamp(
+                4rem,
+                18vw,
+                6rem
+            );
+
+    }
+
+    .racing-text p {
+
+        max-width: 310px;
+
+        font-size: 0.69rem;
+
+    }
+
+    .motorcycle-display {
+
+        order: 2;
+
+        min-height: 330px;
+
+        margin-top: 10px;
+
+    }
+
+    .motorcycle-glow {
+
+        width: 330px;
+        height: 220px;
+
+    }
+
+    .motorcycle i {
+
+        font-size:
+            clamp(
+                8rem,
+                35vw,
+                13rem
+            );
+
+    }
+
+    .racing-label {
+
+        bottom: 20px;
+
+        font-size: 0.45rem;
+
+        letter-spacing: 4px;
+
+    }
+
+    .racing-message {
+
+        order: 3;
+
+        align-self: auto;
+
+        max-width: 290px;
+
+        margin:
+            10px
+            0
+            0
+            auto;
+
+        padding-left: 18px;
+
+    }
+
+    .racing-message p {
+
+        font-size: 1.2rem;
+
+    }
+
+    .racing-number {
+
+        right: -15%;
+
+        top: 38%;
+
+        font-size: 28rem;
+
+    }
+
+
+    /* =====================================================
+       FRASE
+    ====================================================== */
+
+    .quote-section {
+
+        padding:
+            120px
+            25px;
+
+    }
+
+    .quote-mark {
+
+        font-size: 4.5rem;
+
+    }
+
+    .quote-section blockquote {
+
+        font-size:
+            clamp(
+                2rem,
+                9vw,
+                3.2rem
+            );
+
+        line-height: 1.08;
+
+    }
+
+    .quote-line {
+
+        margin-top: 30px;
+
+    }
+
+
+    /* =====================================================
+       MÚSICA
+    ====================================================== */
+
+    .music-section {
+
+        padding:
+            95px
+            0
+            110px;
+
+    }
+
+    .music-card {
+
+        min-height: auto;
+
+        display: flex;
+
+        flex-direction: column;
+
+    }
+
+    .music-cover {
+
+        min-height: 320px;
+
+    }
+
+    .music-cover::after {
+
+        inset: 18px;
+
+    }
+
+    .vinyl {
+
+        width: 205px;
+        height: 205px;
+
+    }
+
+    .vinyl-center {
+
+        width: 52px;
+        height: 52px;
+
+    }
+
+    .music-cover-label {
+
+        left: 25px;
+        bottom: 23px;
+
+        font-size: 0.45rem;
+
+    }
+
+    .music-info {
+
+        padding:
+            40px
+            25px
+            45px;
+
+    }
+
+    .artist {
+
+        font-size: 0.5rem;
+
+        letter-spacing: 3px;
+
+    }
+
+    .music-info h3 {
+
+        font-size:
+            clamp(
+                2.6rem,
+                13vw,
+                4rem
+            );
+
+        line-height: 0.9;
+
+    }
+
+    .music-description {
+
+        font-size: 0.67rem;
+
+        line-height: 1.8;
+
+    }
+
+    .music-player {
+
+        margin-top: 30px;
+
+    }
+
+    .play-button {
+
+        width: 50px;
+        height: 50px;
+
+        flex-shrink: 0;
+
+    }
+
+    .music-bars {
+
+        gap: 3px;
+
+    }
+
+
+    /* =====================================================
+       REGALO
+    ====================================================== */
+
+    .gift-section {
+
+        min-height: auto;
+
+        padding:
+            110px
+            20px
+            120px;
+
+    }
+
+    .gift-content > p {
+
+        font-size: 0.68rem;
+
+    }
+
+    .gift-box {
+
+        transform: scale(0.82);
+
+        margin:
+            55px
+            auto
+            20px;
+
+    }
+
+    .gift-message p {
+
+        font-size: 1.3rem;
+
+    }
+
+    .gift-message strong {
+
+        font-size: 1.8rem;
+
+    }
+
+
+    /* =====================================================
+       INSTALAR APLICACIÓN
+    ====================================================== */
+
+    .install-section {
+
+        width: calc(100% - 34px);
+
+        padding:
+            25px
+            0
+            100px;
+
+    }
+
+    .install-card {
+
+        min-height: auto;
+
+        padding:
+            40px
+            25px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 35px;
+
+    }
+
+    .install-icon {
+
+        width: 80px;
+        height: 105px;
+
+        border-radius: 16px;
+
+        font-size: 2rem;
+
+    }
+
+    .install-content h2 {
+
+        font-size:
+            clamp(
+                3rem,
+                14vw,
+                4.5rem
+            );
+
+    }
+
+    .install-content p {
+
+        font-size: 0.68rem;
+
+        line-height: 1.85;
+
+    }
+
+    .install-button {
+
+        width: 100%;
+
+        justify-content: center;
+
+        padding: 16px;
+
+    }
+
+    .install-content small {
+
+        line-height: 1.6;
+
+    }
+
+    .install-card::after {
+
+        font-size: 8rem;
+
+        right: -10px;
+
+        bottom: -20px;
+
+    }
+
+
+    /* =====================================================
+       FINAL
+    ====================================================== */
+
+    .final-section {
+
+        min-height: 700px;
+
+        padding:
+            100px
+            20px;
+
+    }
+
+    .final-section::before {
+
+        width: 430px;
+        height: 430px;
+
+    }
+
+    .final-section::after {
+
+        width: 580px;
+        height: 580px;
+
+    }
+
+    .final-small {
+
+        font-size: 0.45rem;
+
+        letter-spacing: 2.5px;
+
+    }
+
+    .final-content h2 {
+
+        font-size:
+            clamp(
+                4.5rem,
+                21vw,
+                7rem
+            );
+
+        letter-spacing: -2px;
+
+    }
+
+    .final-text {
+
+        margin-top: 30px;
+
+        max-width: 300px;
+
+        font-size: 0.68rem;
+
+        line-height: 1.9;
+
+    }
+
+    .love-button {
+
+        padding: 14px 18px;
+
+        font-size: 0.52rem;
+
+    }
+
+    .final-date {
+
+        margin-top: 35px;
+
+        font-size: 0.85rem;
+
+        letter-spacing: 4px;
+
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ====================================================== */
+
+    .footer {
+
+        padding:
+            50px
+            20px;
+
+    }
+
+    .footer-logo {
+
+        font-size: 1.25rem;
+
+    }
+
+    .footer p {
+
+        font-size: 0.58rem;
+
+    }
+
+
+    /* =====================================================
+       TOAST
+    ====================================================== */
+
+    .toast {
+
+        left: 15px;
+        right: 15px;
+
+        bottom: 15px;
+
+        max-width: none;
+
+        justify-content: center;
+
+        text-align: center;
+
+        font-size: 0.6rem;
+
+    }
+
+}
+
+
+/* =========================================================
+   CELULARES PEQUEÑOS
+   Hasta 380px
+========================================================= */
+
+@media (width <= 380px) {
+
+    .header-container {
+
+        width: calc(100% - 24px);
+
+    }
+
+    .logo-text {
+
+        font-size: 0.95rem;
+
+    }
+
+    .hero-content {
+
+        width: calc(100% - 28px);
+
+    }
+
+    .hero h1 {
+
+        font-size:
+            clamp(
+                3.8rem,
+                19vw,
+                5.5rem
+            );
+
+    }
+
+    .hero h1 em {
+
+        margin-left: 22px;
+
+    }
+
+    .hero-description {
+
+        max-width: 250px;
+
+    }
+
+    .hero-button {
+
+        width: 100%;
+
+        justify-content: center;
+
+    }
+
+    .section,
+    .music-section,
+    .install-section,
+    .racing-content {
+
+        width: calc(100% - 28px);
+
+    }
+
+    .story-card {
+
+        padding: 26px;
+
+        min-height: 285px;
+
+    }
+
+    .coffee-section {
+
+        padding-left: 14px;
+        padding-right: 14px;
+
+    }
+
+    .coffee-button {
+
+        width: 100%;
+
+        justify-content: center;
+
+    }
+
+    .coffee-cup {
+
+        transform: scale(0.63);
+
+    }
+
+    .racing-content {
+
+        width: calc(100% - 28px);
+
+    }
+
+    .music-info {
+
+        padding-left: 20px;
+        padding-right: 20px;
+
+    }
+
+    .music-cover {
+
+        min-height: 290px;
+
+    }
+
+    .vinyl {
+
+        width: 185px;
+        height: 185px;
+
+    }
+
+    .install-section {
+
+        width: calc(100% - 28px);
+
+    }
+
+    .install-card {
+
+        padding:
+            35px
+            20px;
+
+    }
+
+}
+
+
+/* =========================================================
+   LANDSCAPE EN CELULAR
+========================================================= */
+
+@media (width <= 760px) and (orientation: landscape) {
+
+    .hero {
+
+        min-height: 650px;
+
+    }
+
+    .hero-car {
+
+        right: -5%;
+
+        top: 55%;
+
+        opacity: 0.3;
+
+    }
+
+    .hero-scroll {
+
+        display: none;
+
+    }
+
+    .nav {
+
+        padding-top: 25px;
+
+        overflow-y: auto;
+
+    }
+
+    .nav a {
+
+        padding: 10px;
+
+        font-size: 1.2rem;
+
+    }
+
+    .coffee-section {
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+    .coffee-right {
+
+        height: 450px;
+
+        margin-top: 0;
+
+    }
+
+    .music-cover {
+
+        min-height: 350px;
+
+    }
+
+    .gift-section {
+
+        min-height: 650px;
+
+    }
+
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+    .hero-button,
+    .coffee-button,
+    .gift-button,
+    .install-button,
+    .love-button,
+    .play-button {
+
+        -webkit-tap-highlight-color: transparent;
+
+    }
+
+    .story-card:hover {
+
+        transform: none;
+
+    }
+
+    .hero-button:active,
+    .coffee-button:active,
+    .gift-button:active,
+    .install-button:active,
+    .love-button:active {
+
+        transform: scale(0.97);
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .nav,
+    .menu-toggle span,
+    .gift-lid,
+    .hidden-message,
+    .gift-message {
+
+        transition: none;
+
+    }
+
+}
